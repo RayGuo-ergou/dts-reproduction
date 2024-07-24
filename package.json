@@ -1,0 +1,46 @@
+{
+  "name": "ui",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@9.6.0",
+  "description":"ui",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./index.css": {
+      "import": "./dist/index.css",
+      "require": "./dist/index.css"
+    },
+    "./*": {
+      "types": "./dist/components/*/index.d.ts",
+      "import": "./dist/components/*/index.js",
+      "require": "./dist/components/*/index.cjs"
+    },
+    "./libs": {
+      "types": "./dist/lib/index.d.ts",
+      "import": "./dist/lib/index.js",
+      "require": "./dist/lib/index.cjs"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite dev",
+    "build": "rm -rf ./dist && vite build"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "autoprefixer": "^10.4.19",
+    "typescript": "^5.5.4",
+    "vite": "^5.3.4",
+    "vite-plugin-dts": "4.0.0-beta.1",
+    "vue": "^3.4.33",
+    "vue-tsc": "2.0.28"
+  }
+}
